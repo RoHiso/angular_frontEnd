@@ -8,6 +8,7 @@ import { SigninComponent } from './components/signin/signin.component';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { SpinnerComponent } from './shared/spinner/spinner.component';
+import { PruebaFlexComponent } from './component/prueba-flex/prueba-flex.component';
 
 @NgModule({
   declarations: [
@@ -16,7 +17,8 @@ import { SpinnerComponent } from './shared/spinner/spinner.component';
     SigninComponent,
     DashboardComponent,
     NavbarComponent,
-    SpinnerComponent
+    SpinnerComponent,
+    PruebaFlexComponent
   ],
   imports: [
     BrowserModule,
