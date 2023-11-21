@@ -6,7 +6,8 @@ import { AppComponent } from './app.component';
 
 //Modulos
 import {HttpClientModule} from '@angular/common/http';
-
+import { FormsModule } from '@angular/forms';
+ 
 //Components
 import { LoginComponent } from './components/login/login.component';
 import { SigninComponent } from './components/signin/signin.component';
@@ -14,6 +15,7 @@ import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { SpinnerComponent } from './shared/spinner/spinner.component';
 import { PruebaFlexComponent } from './component/prueba-flex/prueba-flex.component';
+
 
 @NgModule({
   declarations: [
@@ -28,7 +30,9 @@ import { PruebaFlexComponent } from './component/prueba-flex/prueba-flex.compone
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    FormsModule
+
     
   ],
   providers: [],
