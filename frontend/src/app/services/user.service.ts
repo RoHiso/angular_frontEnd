@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { environment } from 'src/environments/environment';
+//import { environment } from 'src/environments/environment';
 import { user } from '../interfaces/user';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
@@ -8,12 +8,12 @@ import { Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class UserService {
-  private myAppUrl:string;
+  private myAppUrl:any;
   private myApiUrl:string;
 
   constructor(private http:HttpClient) { 
-    this.myAppUrl=environment.endpoint;
-    this.myApiUrl='api/users/'
+    this.myAppUrl='http://localhost:3001/'
+    this.myApiUrl='api/usuarios'
   }
   signIn (user:user):Observable<any> {
 
