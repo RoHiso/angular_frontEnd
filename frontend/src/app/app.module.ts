@@ -32,7 +32,16 @@ import { PruebaFlexComponent } from './component/prueba-flex/prueba-flex.compone
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    FormsModule,
+    BrowserAnimationsModule, // required animations module
+    ToastrModule.forRoot(
+      {
+        timeOut: 4000,
+        positionClass: 'toast-bottom-right',
+        preventDuplicates: true,
+      }
+    ), // ToastrModule added
     
   ],
   providers: [],

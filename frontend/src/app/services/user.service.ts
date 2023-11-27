@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 //import { environment } from 'src/environments/environment';
-import { user } from '../interfaces/user';
+import { User } from '../interfaces/user';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 
@@ -15,7 +15,7 @@ export class UserService {
     this.myAppUrl='http://localhost:3001/'
     this.myApiUrl='api/usuarios'
   }
-  signIn (user:user):Observable<any> {
+  signIn (user:User):Observable<any> {
 
     return this.http.post(`${this.myAppUrl}${this.myApiUrl}`,user);
   }

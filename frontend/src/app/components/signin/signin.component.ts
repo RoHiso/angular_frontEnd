@@ -28,7 +28,7 @@ addUser(){
   }
   //validamos contraseñas
   if (this.password != this.confirmPass) {
-    this.toastr.error('Las contraseñas nos son iguales', 'Error de Contraseña!!'):
+    this.toastr.error('Las contraseñas nos son iguales', 'Error de Contraseña!!');
     return;
     
   }
