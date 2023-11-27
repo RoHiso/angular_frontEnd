@@ -18,6 +18,7 @@ import { NavbarComponent } from './components/navbar/navbar.component';
 import { SpinnerComponent } from './shared/spinner/spinner.component';
 import { PruebaFlexComponent } from './component/prueba-flex/prueba-flex.component';
 
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -31,14 +32,7 @@ import { PruebaFlexComponent } from './component/prueba-flex/prueba-flex.compone
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule,
-    FormsModule,
-    BrowserAnimationsModule, // required animations module
-    ToastrModule.forRoot({
-      timeOut: 4000,
-      positionClass: 'toast-bottom-right',
-      preventDuplicates: true,
-    }), // ToastrModule added
+    HttpClientModule
     
   ],
   providers: [],
