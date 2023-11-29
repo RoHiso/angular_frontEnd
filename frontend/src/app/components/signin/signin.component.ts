@@ -13,6 +13,7 @@ export class SigninComponent {
 username:string='';
 password:string='';
 confirmPass:string='';
+loading:boolean=false;
 
 constructor(private _userServices: UserService,
             private toastr:ToastrService,
@@ -38,7 +39,9 @@ addUser(){
     username:this.username,
     password:this.password
   }
+  this.loading=true;
   this._userServices.signIn(user).subscribe(data =>{
+  this.loading=false;  
     this.toastr.success('El usuario fue registrado con exito','Usuario Registrado!!');
     this.router.navigate(['/login']);
   })

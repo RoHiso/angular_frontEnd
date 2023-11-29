@@ -1,7 +1,7 @@
 
 <div class="wrapper">
     
-    <div class="body">
+    <div *ngIf="!loading" class="body">
         <img class="logo" src="../../../assets/img/usuario.png" alt="img login">
         <h1>SignIn</h1>
         <div class="form-floating mb-3 mt-3">
@@ -21,5 +21,5 @@
         
         <p>Volver al Inicio <a routerLink="/login">Volver</a></p>
     </div>    
-    <app-spinner></app-spinner>
+    <app-spinner *ngIf="loading"></app-spinner>
 </div>
