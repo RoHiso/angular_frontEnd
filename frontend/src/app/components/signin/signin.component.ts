@@ -1,3 +1,4 @@
+import { HttpErrorResponse } from '@angular/common/http';
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
@@ -40,10 +41,29 @@ addUser(){
     password:this.password
   }
   this.loading=true;
-  this._userServices.signIn(user).subscribe(data =>{
-  this.loading=false;  
-    this.toastr.success('El usuario fue registrado con exito','Usuario Registrado!!');
-    this.router.navigate(['/login']);
+  this._userServices.signIn(user).subscribe({
+   
+    next:(v)=> {
+      this.loading=false;  
+      this.toastr.success('El usuario fue registrado con exito','Usuario Registrado!!');
+      this.router.navigate(['/login']);
+      
+    },
+    error:(e: HttpErrorResponse) =>{
+      this.loading = false;
+      this.msjError(e);
+      
+    },
+    complete:()=> console.info('Completado')
   })
+
+}
+ 
+msjError (e:HttpErrorResponse){
+  if(e.error.msg){
+    this.toastr.error(e.error.msg, 'Error!!');
+  }else{
+    this.toastr.error("Upps error de Servidor, comuniquese con el administrador", "Error!!!");
+  }
 }
 }
