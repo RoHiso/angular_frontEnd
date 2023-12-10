@@ -42,7 +42,7 @@ constructor(private _userServices:UserService,
       next:(token) => { 
         //el parametro v nos retorna el token desde el Back - que luego lo pasamos por localStorage
         this.loading=false;
-        localStorage.setItem('token', JSON.stringify (token));
+        localStorage.setItem('token', token);
         this.router.navigate(["/dashboard"]);
         
       },
